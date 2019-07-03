@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ljc.admin.dao.ApiGroupMapper">
+<resultMap id="apiGroup" type="com.ljc.admin.entity.ApiGroup">
+    <id column="id" property="id" />
+    <result column="name" property="name"/>
+    <result column="host" property="host"/>
+    <result column="describe" property="describe"/>
+    <result column="create_time" property="createTime"/>
+    <collection property="createUserId" ofType="com.ljc.admin.entity.ApiUser">
+        <id column="id" property="id"/>
+        <result property="user" column="user"/>
+    </collection>
+</resultMap>
+    <select id="getApiGroupInfo" resultMap="apiGroup">
+        select au.user,ag.name,ag.host,ag.describe,ag.create_time
+        from api_group ag inner join api_user au on au.id=ag.create_user_id
+        where 1=1
+        <if test="name!=null and name!=''">
+            and ag.name like '%#{name}%'
+        </if>
+        <if test="host!=null and host!=''">
+            and ag.host like '%#{host}%'
+        </if>
+    </select>
+</mapper>

@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.ToString;
 
+import java.util.List;
+
 /**
  * @Author Lijc
  * @Description
@@ -18,5 +20,6 @@ public class ApiGroup {
     private String name;
     private String host;
     private String createTime;
-    private String createUserId;
+    private ApiUser createUserId;
+    private String describe;
 }

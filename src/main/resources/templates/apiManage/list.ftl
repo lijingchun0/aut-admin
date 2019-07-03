@@ -40,10 +40,10 @@
 		<div class="weadmin-body">
 			<div class="layui-row">
 				<form class="layui-form layui-col-md12 we-search">
-					文章搜索：
+					接口搜索：
 					<div class="layui-input-inline">
 						<select name="cateid">
-							<option>请选择分类</option>
+							<option>请选择API组</option>
 							<option>文章</option>
 							<option>会员</option>
 							<option>权限</option>
@@ -66,7 +66,7 @@
 				<button class="layui-btn" data-type="Recommend"><i class="layui-icon">&#xe6c6;</i>推荐</button>
 				<button class="layui-btn" data-type="Top"><i class="layui-icon">&#xe619;</i>置顶</button>
 				<button class="layui-btn" data-type="Review"><i class="layui-icon">&#xe6b2;</i>审核</button>
-				<button class="layui-btn" onclick="WeAdminShow('添加用户','/apiManage/add',600,400)"><i class="layui-icon">&#xe61f;</i>添加</button>
+				<button class="layui-btn" onclick="WeAdminShow('添加用户','/apiManage/apiAdd',600,400)"><i class="layui-icon">&#xe61f;</i>添加</button>
 				<span class="fr" style="line-height:40px">共有数据：88 条</span>
 			</div>
 			<table class="layui-hide" id="articleList"></table>
@@ -84,7 +84,7 @@
 			</script>
 
 			<script type="text/html" id="operateTpl">
-				<a title="编辑" onclick="WeAdminEdit('编辑','/apiManage/edit', 2, 600, 400)" href="javascript:;">
+				<a title="编辑" onclick="WeAdminEdit('编辑','/apiManage/apiEdit', 2, 600, 400)" href="javascript:;">
 					<i class="layui-icon">&#xe642;</i>
 				</a>
 				<a title="查看" onclick="WeAdminShow('查看文章','./show.html',600,400)" href="javascript:;">

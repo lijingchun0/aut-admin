@@ -11,43 +11,37 @@ layui.use(['table', 'jquery','form', 'admin'], function() {
 	table.render({
 		elem: '#articleList',
 		cellMinWidth: 80,
+		url: "apiGroup/apiGroupInfo",
 		cols: [
 			[{
 				type: 'checkbox'
 			}, {
-				field: 'id',title: 'ID',sort: true
+				field: 'id',title: 'ID',sort: true,width:40, templet: '#xuhao'
 			}, {
-				field: 'title',title: '标题',templet: '#usernameTpl'
+				field: 'name',title: '工程',templet: '#usernameTpl'
 			}, {
-				field: 'date',title: '发布时间',sort: true
+				field: 'host',title: 'HOST'
 			}, {
-				field: 'category',title: '分类',sort: true
+				field: 'createTime',title: '创建时间'
 			}, {
-				field: 'sort',title: '排序',sort: true
-			}, {
-				field: 'recommend',title: '推荐',templet: '#recommendTpl',unresize: true
-			}, {
-				field: 'top',title: '置顶',templet: '#topTpl',unresize: true
-			}, {
+				field: 'createUser',title: '创建人'
+			},  {
 				field: 'review',title: '审核',templet: '#reviewTpl',unresize: true
 			}, {
 				field: 'operate',title: '操作',toolbar: '#operateTpl',unresize: true
 			}]
 		],
 		data: [{
-			"id": "1",
+
 			"title": "WeAdmin的第一个版本在不断地抽空完善学习中",
-			"date": "2018-02-03",
+			"createTime": "2018-02-03",
 			"category": "官方动态",
-			"sort": "1",
 			"recommend": "checked",
 			"top": "checked"
 		}, {
-			"id": "2",
 			"title": "WeAdmin的测试数据一二三四五六七",
 			"date": "2018-02-03",
 			"category": "新闻资讯",
-			"sort": "1",
 			"recommend": "",
 			"top": "checked"
 		}],
