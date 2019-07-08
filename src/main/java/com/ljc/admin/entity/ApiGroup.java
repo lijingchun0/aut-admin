@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -14,12 +15,13 @@ import java.util.List;
 @Data
 @ToString
 @TableName("api_group")
-public class ApiGroup {
+public class ApiGroup implements Serializable {
 
     private String id;
     private String name;
     private String host;
     private String createTime;
-    private ApiUser createUserId;
+    private String createUserId;
     private String describe;
+    private ApiUser apiUser;
 }

@@ -24,7 +24,10 @@ layui.use(['table', 'jquery','form', 'admin'], function() {
 			}, {
 				field: 'createTime',title: '创建时间'
 			}, {
-				field: 'createUser',title: '创建人'
+				field: 'apiUser',title: '创建人',
+				templet: function(d){
+					return d.apiUser.user;
+				}
 			},  {
 				field: 'review',title: '审核',templet: '#reviewTpl',unresize: true
 			}, {
@@ -34,12 +37,18 @@ layui.use(['table', 'jquery','form', 'admin'], function() {
 		data: [{
 
 			"title": "WeAdmin的第一个版本在不断地抽空完善学习中",
+			"apiUser":{
+				"user":"aaaa"
+			},
 			"createTime": "2018-02-03",
 			"category": "官方动态",
 			"recommend": "checked",
 			"top": "checked"
 		}, {
 			"title": "WeAdmin的测试数据一二三四五六七",
+			"apiUser":{
+				"user":"aaaa"
+			},
 			"date": "2018-02-03",
 			"category": "新闻资讯",
 			"recommend": "",

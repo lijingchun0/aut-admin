@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
+
 /**
  * @Author Lijc
  * @Description
@@ -38,7 +40,7 @@ public class ApiManageController {
     @GetMapping("/apiGroupInfo")
     @ResponseBody
     public String apiGroupInfo(@RequestParam("name")String name,@RequestParam("host")String host){
-        System.out.println(apiGroupService.getApiGroupInfo(name,host));
+        System.out.println("======"+apiGroupService.getApiGroupInfo(name,host).get(1).getApiUser().getUser());
 
         return JSON.toJSONString(apiGroupService.getApiGroupInfo(name,host));
     }
